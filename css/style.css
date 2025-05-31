@@ -92,6 +92,29 @@ section.section {
 }
 html { scroll-behavior: smooth;}
   
+.menu-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+  
+.menu-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item img {
+    transition: transform 0.3s ease;
+}
+  
+.menu-item:hover img {
+    transform: scale(1.05);
+}
+
+.menu-item:hover {
+    background-color: #fdf5f0; /* لون خفيف برتقالي مثلاً */
+}
+  
   
 
   
