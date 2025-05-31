@@ -114,6 +114,21 @@ html { scroll-behavior: smooth;}
 .menu-item:hover {
     background-color: #fdf5f0; /* لون خفيف برتقالي مثلاً */
 }
+
+.menu-section.fade-in {
+    animation: fadeInUp 0.4s ease;
+}
+  
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
   
   
 

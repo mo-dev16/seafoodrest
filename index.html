@@ -136,8 +136,8 @@
 
       <div class="container" dir="rtl">
         <div class="menu-tabs">
-          <button class="menu-tab active" onclick="showMenu('ready', this)">الوجبات الجاهزة</button>
-          <button class="menu-tab" onclick="showMenu('fish', this)">المسمكة الطازجة</button>
+          <button class="menu-tab active" data-type="ready" onclick="showMenu('ready', this)">الوجبات الجاهزة</button>
+          <button class="menu-tab" data-type="fish" onclick="showMenu('fish', this)">المسمكة الطازجة</button>
         </div>
       
         <div id="menu-ready" class="menu-section">
@@ -358,6 +358,27 @@
         document.getElementById('menu-' + type).style.display = 'block';
       }
     </script>
+    <script>
+      document.querySelectorAll('.menu-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetId = 'menu-' + tab.getAttribute('data-type');
+          const targetSection = document.getElementById(targetId);
+    
+          // شيل أي fade-in قديم
+          document.querySelectorAll('.menu-section').forEach(sec => {
+            sec.classList.remove('fade-in');
+          });
+    
+          // أضف التأثير بعد تأخير بسيط (عشان يشتغل بعد ما يصير display: block)
+          setTimeout(() => {
+            if (targetSection) {
+              targetSection.classList.add('fade-in');
+            }
+          }, 10);
+        });
+      });
+    </script>
+    
     
    
     
