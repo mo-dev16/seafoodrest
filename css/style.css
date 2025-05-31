@@ -90,7 +90,7 @@ section.section {
     position: relative;
     z-index: 9999;
 }
-  
+html { scroll-behavior: smooth;}
   
   
 
